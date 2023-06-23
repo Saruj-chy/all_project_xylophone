@@ -1,3 +1,4 @@
+import 'package:all_project_xylone/Firebase/constants.dart';
 import 'package:flutter/material.dart';
 
 class Rich_Screen extends StatelessWidget {
@@ -10,7 +11,7 @@ class Rich_Screen extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: Text("Rich App"), backgroundColor: Colors.black54,),
+        appBar: AppBarComp(text: "Image Show", mCtx: context,),
         backgroundColor: Colors.blue,
         body: Center(
           child: Image(

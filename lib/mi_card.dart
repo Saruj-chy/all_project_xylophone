@@ -1,3 +1,4 @@
+import 'package:all_project_xylone/Firebase/constants.dart';
 import 'package:flutter/material.dart';
 
 class Mi_Card extends StatelessWidget {
@@ -7,9 +8,12 @@ class Mi_Card extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBarComp(text: "Mi Card", mCtx: context,),
         backgroundColor: Colors.teal,
         body: SafeArea(
+          minimum: EdgeInsets.symmetric(horizontal: 10.0, vertical: 40.0),
           child: Column(
             children: <Widget>[
               CircleAvatar(
@@ -128,4 +132,3 @@ class Mi_Card extends StatelessWidget {
     );
   }
 }
-

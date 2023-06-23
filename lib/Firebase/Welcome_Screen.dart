@@ -12,19 +12,35 @@ class Welcome_Screen extends StatefulWidget {
 
 class _Welcome_ScreenState extends State<Welcome_Screen> with SingleTickerProviderStateMixin {
   late AnimationController controller ;
+  late Animation animation ;
   @override
   void initState() {
     super.initState();
 
     controller = AnimationController(
-        duration: Duration(seconds: 10),
-        vsync: this,
+        duration: Duration(seconds: 1),
+        vsync: this
     );
 
     controller.forward();
-    controller.addListener(() {
+
+    // animation = CurvedAnimation(parent: controller, curve: Curves.decelerate) ;
+    animation = ColorTween(begin: Colors.red, end: Colors.blue).animate(controller) ;
+    // controller.reverse(from: 1.0) ;
+    animation.addStatusListener((status) {
       setState(() {
         print(controller.value) ;
+        // if (status == AnimationStatus.completed){
+        //   controller.reverse(from: 1.0) ;
+        // }else if(status == AnimationStatus.dismissed){
+        //   controller.forward() ;
+        // }
+      });
+    }) ;
+    controller.addListener(() {
+      setState(() {
+        print( controller.value.toInt() ) ;
+        print(animation.value) ;
 
       });
     });
@@ -33,7 +49,8 @@ class _Welcome_ScreenState extends State<Welcome_Screen> with SingleTickerProvid
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.red.withOpacity(controller.value),
+        // backgroundColor: Colors.red.withOpacity(controller.value),
+        backgroundColor: animation.value,
         body: Padding(
           padding: EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
@@ -52,7 +69,7 @@ class _Welcome_ScreenState extends State<Welcome_Screen> with SingleTickerProvid
                   Text(
                     'Flash Chat',
                     style: TextStyle(
-                      fontSize: 45.0,
+                      fontSize: 30.0,
                       fontWeight: FontWeight.w900,
                     ),
                   ),

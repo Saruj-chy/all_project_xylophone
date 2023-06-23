@@ -10,13 +10,31 @@ import 'package:all_project_xylone/quizzler.dart';
 import 'package:all_project_xylone/rich_app.dart';
 import 'package:all_project_xylone/xylophone.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
+//https://console.firebase.google.com/u/1/project/burj-al-arab-246ca/firestore/data/~2Fmessages~2FOzhUzarDkt9dQz7hWOzH
+// nishandurjoy123@gmail.com firebase project - burj-al-arab
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   return runApp(
-      FlashChat()
+      RunApp()
   );
 }
+class RunApp extends StatelessWidget {
+  const RunApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+
+      debugShowCheckedModeBanner: false,
+      home: FlashChat(),
+    );
+  }
+}
+
 
 class FlashChat extends StatelessWidget {
   const FlashChat({Key? key}) : super(key: key);
@@ -24,12 +42,14 @@ class FlashChat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         textTheme: TextTheme(
           bodyText1: TextStyle(color: Colors.black54)
         ),
       ),
-      initialRoute:Welcome_Screen.id ,
+      initialRoute:main_all_screen.id ,
       routes: {
         Welcome_Screen.id: (context) => Welcome_Screen(),
         Login_Screen.id: (context) => Login_Screen(),

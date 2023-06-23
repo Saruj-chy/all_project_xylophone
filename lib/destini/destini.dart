@@ -1,3 +1,4 @@
+import 'package:all_project_xylone/Firebase/constants.dart';
 import 'package:all_project_xylone/destini/story_brain.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +11,7 @@ class Destini extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: StoryPage(),
     );
@@ -29,6 +31,7 @@ class _StoryPageState extends State<StoryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBarComp(text: "Destini", mCtx: context,),
       body: Container(
         //TODO: Step 1 - Add background.png to this Container as a background image.
         padding: EdgeInsets.symmetric(vertical: 50.0, horizontal: 15.0),

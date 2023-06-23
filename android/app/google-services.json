@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "686567564847",
+    "firebase_url": "https://burj-al-arab-246ca.firebaseio.com",
+    "project_id": "burj-al-arab-246ca",
+    "storage_bucket": "burj-al-arab-246ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686567564847:android:20e14db5201579171088da",
+        "android_client_info": {
+          "package_name": "com.sd.spartan.all_project_xylone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "686567564847-o9hb050tkd6882mj84lfl7dvmv5da614.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQeoydzrl5nqdF2szTdcpzURbNSywAEpk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "686567564847-o9hb050tkd6882mj84lfl7dvmv5da614.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,3 +1,4 @@
+import 'package:all_project_xylone/Firebase/constants.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
@@ -7,13 +8,11 @@ class Dice_Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
+
       home: Scaffold(
         backgroundColor: Colors.green,
-        appBar: AppBar(
-
-          title: Text('Dicee'),
-          backgroundColor: Colors.red,
-        ),
+        appBar: AppBarComp(text: "Dice Play", mCtx: context,),
         body: DicePage(),
       ),
     );

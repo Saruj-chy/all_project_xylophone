@@ -1,3 +1,4 @@
+import 'package:all_project_xylone/Firebase/constants.dart';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
@@ -13,12 +14,10 @@ class Quizzler_Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+    debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.green,
-        appBar: AppBar(
-          title: Text('Question Bank'),
-          backgroundColor: Colors.red,
-        ),
+        appBar:AppBarComp(text: "Question Bank", mCtx: context,) ,
         body: Quizzler(),
       ),
     );
@@ -33,14 +32,12 @@ class Quizzler extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.grey.shade900,
-        body: SafeArea(
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.0),
-            child: QuizPage(),
-          ),
+    return Scaffold(
+      backgroundColor: Colors.grey.shade900,
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 10.0),
+          child: QuizPage(),
         ),
       ),
     );
